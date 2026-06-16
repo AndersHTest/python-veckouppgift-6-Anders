@@ -10,9 +10,9 @@
 
 ### Status uppgifter
 
-| Uppgift                 | Status | 🟠🟡🟢  |
-|-------------------------|--------|---------|
-| 1 Läsa och förstå kod   | 100%   | 🟢      |
-| 2 Länder                | 100%   | 🟢      |
-| 3 Banken                | 100%   | 🟢      |
-| 4 Webbshop              | 75%    | 🟡      |
+| Uppgift                 | Status | 🟠🟡🟢    |
+|-------------------------|--------|-----------|
+| 1 Läsa och förstå kod   | 100%   | 🟢        |
+| 2 Länder                | 100%   | 🟢        |
+| 3 Banken                | 100%   | 🟢        |
+| 4 Webbshop              | 100%   | 🟢        |

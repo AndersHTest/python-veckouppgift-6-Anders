@@ -72,5 +72,3 @@ def bank_menu():
 
         elif control == "5":
             print(z.interest())
-
-bank_menu()

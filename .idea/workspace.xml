@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5cf50d-fd19-4967-9ae4-9c81a83341f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/my_app/Bank_of_Anders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/my_app/uppgift_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/my_app/uppgift_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/my_app/webbshop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_bank_account.py" afterDir="false" />
+    <list default="true" id="4e5cf50d-fd19-4967-9ae4-9c81a83341f9" name="Changes" comment="Påbörjat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_app/Bank_of_Anders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_app/Bank_of_Anders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_app/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_app/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/my_app/webbshop.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/my_app/webbshop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +53,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests in test_bank_account.py.executor": "Run",
     "Python.Bank_of_Anders.executor": "Run",
+    "Python.menu.executor": "Run",
     "Python.uppgift_1.executor": "Run",
     "Python.uppgift_2.executor": "Run",
     "Python.webbshop.executor": "Run",
@@ -88,9 +86,21 @@
       <option name="presentableId" value="Default" />
       <updated>1781534637162</updated>
     </task>
+    <task id="LOCAL−00001" summary="Påbörjat">
+      <option name="closed" value="true" />
+      <created>1781569828505</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1781569828505</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Påbörjat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Påbörjat" />
   </component>
 </project>
