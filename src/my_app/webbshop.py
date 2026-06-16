@@ -1,4 +1,3 @@
-
 class Customer:
     def __init__(self, first_name, last_name, email, phone_number):
         self.first_name = first_name
@@ -21,7 +20,6 @@ class Product:
     def __str__(self):
         return f"{self.name}: {self.price} kr, {self.inventory} i lager. Det totala värdet är {self.__stock_value()} kr."
 
-
     def __stock_value(self):
         return self.inventory * self.price
 
@@ -33,35 +31,45 @@ produkt_3 = Product(1339, 599, "Vinkelslip", 7)
 class Order:
     """En order i webbutiken. Order_id, Customer"""
 
-    def __init__(self, order_id, customer, order_lines=None):
+    def __init__(self, order_id, customer):
         self.__id = order_id
         self.status = 'pending'
         self.total = 0
         self.customer = customer
-        self.order_lines = []
-
+        self.order_lines = {}
 
     def add_order_line(self, product, quantity):
         """Lägg till en order kundvagnen. Produkt, quantity."""
-        self.order_lines.append(product.name)
-        self.total += product.price * quantity
-        product.inventory -= quantity
+        if product.name in self.order_lines:
+            self.order_lines[product.name] += quantity
+            self.total += product.price * quantity
+            product.inventory -= quantity
+            print(product.name)
+        elif product.name not in self.order_lines:
+            print(product.name)
+            self.order_lines.update({product.name: quantity})
+            self.total += product.price * quantity
+            product.inventory -= quantity
 
     def remove_order_line(self, product, quantity):
-        """Ta bort en produkt ur kundvagnen. Produkt, quantity."""
-        self.order_lines.remove(product.name)
-        self.total -= product.price * quantity
-        product.inventory += quantity
+        """Ta bort en produkt ur kundvagnen. Product, quantity."""
+        if product.name in self.order_lines:
 
+            self.order_lines[product.name] -= quantity
+            self.total -= product.price * quantity
+            product.inventory += quantity
+            z = self.order_lines.copy()
+            for i in z.keys():
+                if self.order_lines[i] == 0:
+                    self.order_lines.pop(i)
+
+        elif product.name not in self.order_lines:
+            return f"Det finns inget att ta bort."
 
     def print_order(self):
         """Visa ordern."""
-        print(f"\nCustomer ID: {self.__id}\nCustomer name: {self.customer.first_name}\nPris: {self.total}\nProdukter: {self.order_lines}\n")
-
-    def order_line_contain(self):
-        x = self.order_lines
-        print(x)
-        print(f"\n {self.customer.first_name} : {self.order_lines}")
+        print(
+            f"\nCustomer ID: {self.__id}\nCustomer name: {self.customer.first_name}\nPris: {self.total}\nProdukter: {self.order_lines}\n")
 
 
 
@@ -70,17 +78,15 @@ def main():
     products = f"\n{produkt_1.name}: {produkt_1.price} kr.\n{produkt_2.name}: {produkt_2.price} kr.\n{produkt_3.name}: {produkt_3.price} kr.\n"
     order_1 = Order(1337, Customer("John", "Doe", "", "123456"))
 
-
     while active:
-        print("\nShopping Cart Menu\n")
-        print("1. Products")
-        print("2. Add order")
-        print("3. Print order")
-        print("4. Remove order")
-        print("0. Exit")
+        print("\nVälkommen till webbshoppen\n")
+        print("1. Produkter")
+        print("2. Lägg till produkt")
+        print("3. Visa order")
+        print("4. Ta bort produkt")
+        print("0. Avsluta")
 
         choice = input("\nEnter your choice: ")
-
 
         if choice == "0":
             active = False
@@ -93,9 +99,9 @@ def main():
             print("1. Skruvdragare")
             print("2. Hammare")
             print("3. Vinkelslip")
-            print("0. Exit\n")
+            print("0. Avsluta\n")
 
-            choice_2 = input("Enter your choice: ")
+            choice_2 = input("Ange ditt val: ")
             if choice_2 == "1":
                 order_1.add_order_line(product=produkt_1, quantity=1)
             elif choice_2 == "2":
@@ -112,9 +118,9 @@ def main():
             print("1. Skruvdragare")
             print("2. Hammare")
             print("3. Vinkelslip")
-            print("0. Exit\n")
+            print("0. Avsluta\n")
 
-            choice_3 = input("Enter your choice: ")
+            choice_3 = input("Ange ditt val: ")
 
             if choice_3 == "0":
                 main()
