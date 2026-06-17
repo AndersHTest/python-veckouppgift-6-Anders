@@ -5,6 +5,7 @@ class Customer:
         self.email = email
         self.phone_number = phone_number
 
+
 customer_1 = Customer("John", "Doe", "john.doe@gmail.com", "123456")
 
 
@@ -17,8 +18,10 @@ class Product:
         self.price = price
         self.inventory = inventory
 
+
     def __str__(self):
         return f"{self.name}: {self.price} kr, {self.inventory} i lager. Det totala värdet är {self.__stock_value()} kr."
+
 
     def __stock_value(self):
         return self.inventory * self.price
@@ -38,18 +41,22 @@ class Order:
         self.customer = customer
         self.order_lines = {}
 
+
     def add_order_line(self, product, quantity):
         """Lägg till en order kundvagnen. Produkt, quantity."""
-        if product.name in self.order_lines:
+        if product.name in self.order_lines and product.inventory >= quantity:
             self.order_lines[product.name] += quantity
             self.total += product.price * quantity
             product.inventory -= quantity
-            print(product.name)
+
         elif product.name not in self.order_lines:
-            print(product.name)
             self.order_lines.update({product.name: quantity})
             self.total += product.price * quantity
             product.inventory -= quantity
+
+        elif product.inventory < quantity:
+            print("Produkten är tyvärr slut.\n")
+
 
     def remove_order_line(self, product, quantity):
         """Ta bort en produkt ur kundvagnen. Product, quantity."""
@@ -66,11 +73,11 @@ class Order:
         elif product.name not in self.order_lines:
             return f"Det finns inget att ta bort."
 
+
     def print_order(self):
         """Visa ordern."""
         print(
             f"\nCustomer ID: {self.__id}\nCustomer name: {self.customer.first_name}\nPris: {self.total}\nProdukter: {self.order_lines}\n")
-
 
 
 def main():
