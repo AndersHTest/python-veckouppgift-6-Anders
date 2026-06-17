@@ -21,5 +21,3 @@ def main_menu():
 
         elif choice == "2":
             main()
-
-main_menu()

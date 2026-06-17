@@ -55,7 +55,7 @@ class Order:
             product.inventory -= quantity
 
         elif product.inventory < quantity:
-            print("Produkten är tyvärr slut.\n")
+            print("\nProdukten är tyvärr slut på lager.\n")
 
 
     def remove_order_line(self, product, quantity):
